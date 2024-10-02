@@ -14,7 +14,7 @@ public class Field {
 
 
 
-
+    // установка начальных позиций для объекта
     public void setupDefaultEntityPositions(){
         List<Integer> initialValues =new ArrayList<>();
 
@@ -30,7 +30,7 @@ public class Field {
             int speed = (int) (Math.random() * initialValues.get(3));
             int health = (int) (Math.random() * initialValues.get(4));
 
-            setEntities(new Coordinates(x,y) ,new Herbivore(Status.NON_STATIC,new Coordinates(x,y),speed,health));
+            setEntities(new Coordinates(x,y) ,new Herbivore(new Coordinates(x,y),speed,health));
         }
     }
 }

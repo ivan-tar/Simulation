@@ -1,10 +1,14 @@
 // Объект
 abstract public class Entity {
-    public final Status status;
+    public Nature nature;
     public Coordinates coordinates;
 
-    public Entity(Status status, Coordinates coordinates) {
-        this.status = status;
+    public Entity(Coordinates coordinates, Nature nature) {
+        this.nature = nature;
+        this.coordinates = coordinates;
+    }
+
+    public Entity(Coordinates coordinates){
         this.coordinates = coordinates;
     }
 }
