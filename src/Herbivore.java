@@ -1,7 +1,7 @@
 // Травоядное
 public class Herbivore extends Creature {
-    Herbivore(int speed, int health) {
-        super(speed, health);
+    public Herbivore(Status status, Coordinates coordinates, int speed, int health) {
+        super(status, coordinates, speed, health);
     }
 
     @Override

@@ -1,8 +1,9 @@
 // Хищник
 public class Predator extends Creature{
     int attackPower;
-    Predator(int speed, int health, int attackPower) {
-        super(speed, health);
+
+    public Predator(Status status, Coordinates coordinates, int speed, int health, int attackPower) {
+        super(status, coordinates, speed, health);
         this.attackPower = attackPower;
     }
 
