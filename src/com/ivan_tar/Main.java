@@ -8,5 +8,6 @@ public class Main {
         FieldConsoleRenderer renderer = new FieldConsoleRenderer();
         renderer.render(field);
         int a = 123;
+        int b = 123;
     }
 }
