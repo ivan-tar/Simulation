@@ -9,5 +9,7 @@ public class Main {
         renderer.render(field);
         int a = 123;
         // test
+        int b = 123;
+        int c = 123;
     }
 }
