@@ -1,10 +1,12 @@
+package com.ivan_tar;
+
 import java.util.Objects;
 
 public class Coordinates {
     public final Integer vertical;
     public final Integer horizontal;
 
-    public Coordinates(Integer vertical, Integer horizontal) {
+    public Coordinates(Integer horizontal, Integer vertical) {
         this.vertical = vertical;
         this.horizontal = horizontal;
     }

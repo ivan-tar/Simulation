@@ -1,3 +1,7 @@
+package com.ivan_tar.entities;
+
+import com.ivan_tar.Coordinates;
+
 // Существо
 abstract public class Creature extends Entity {
     int speed;
@@ -9,6 +13,16 @@ abstract public class Creature extends Entity {
         this.speed = speed;
         this.health = health;
     }
+
+
+    public int getSpeed() {
+        return speed;
+    }
+    public int getHealth() {
+        return health;
+    }
+
+
 
     // для каждого существа своя реализация
     abstract void makeMove();
