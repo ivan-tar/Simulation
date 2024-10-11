@@ -12,6 +12,7 @@ public class Main {
         int b = 123;
         int c = 123;
         int d = 123;
+        System.out.println(b);
 
 
 
