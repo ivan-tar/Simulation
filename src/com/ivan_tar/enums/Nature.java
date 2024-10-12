@@ -1,4 +1,4 @@
-package com.ivan_tar.entities;
+package com.ivan_tar.enums;
 
 public enum Nature {
     TREE,

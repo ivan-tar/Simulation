@@ -1,9 +1,8 @@
 package com.ivan_tar;// поле
 import com.ivan_tar.entities.*;
+import com.ivan_tar.enums.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
 
 public class Field {
@@ -25,20 +24,20 @@ public class Field {
 
     // Метод для генерации случайных координат
     private Coordinates generateRandomCoordinates() {
-        int x = random.nextInt(35);
-        int y = random.nextInt(20);
+        int x = random.nextInt(GameVariables.MAX_X.getValue());
+        int y = random.nextInt(GameVariables.MAX_Y.getValue());
         return new Coordinates(x, y);
     }
 
     private int[] generateRandomValues() {
-        int speed = random.nextInt(3) + 1; // Случайная скорость от 1 до 3
-        int health = random.nextInt(65) + 1; // Случайное здоровье от 1 до 65
-        int attackPower = random.nextInt(20) + 1; // Случайная сила атаки
+        int speed = random.nextInt(GameVariables.SPEED.getValue()) + 1;              // Случайная скорость от 1 до 3
+        int health = random.nextInt(GameVariables.HEALTH.getValue()) + 1;            // Случайное здоровье от 1 до 65
+        int attackPower = random.nextInt(GameVariables.ATTACK_POWER.getValue()) + 1; // Случайная сила атаки
         return new int[]{speed, health, attackPower};
     }
 
     public void setupDefaultEntityPositions() {
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < GameVariables.NUMBER_OF_ENEMIES.getValue(); i++) {
             Coordinates treeCoords = generateRandomCoordinates();
 
             while (!isSquareEmpty(treeCoords)) {
@@ -48,7 +47,7 @@ public class Field {
             setEntities(treeCoords, new StaticObject(treeCoords, Nature.TREE));
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < GameVariables.NUMBER_OF_ENEMIES.getValue(); i++) {
             Coordinates grassCoords = generateRandomCoordinates();
 
             while (!isSquareEmpty(grassCoords)) {
@@ -58,7 +57,7 @@ public class Field {
             setEntities(grassCoords, new StaticObject(grassCoords, Nature.GRASS));
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < GameVariables.NUMBER_OF_ENEMIES.getValue(); i++) {
             Coordinates stoneCoords = generateRandomCoordinates();
 
             while (!isSquareEmpty(stoneCoords)) {
@@ -68,7 +67,7 @@ public class Field {
             setEntities(stoneCoords, new StaticObject(stoneCoords, Nature.STONE));
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < GameVariables.NUMBER_OF_ENEMIES.getValue(); i++) {
             Coordinates herbivoreCoords = generateRandomCoordinates();
             int[] randomValues = generateRandomValues();
             int speed = randomValues[0];
@@ -81,7 +80,7 @@ public class Field {
             setEntities(herbivoreCoords, new Herbivore(herbivoreCoords, speed, health));
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < GameVariables.NUMBER_OF_ENEMIES.getValue(); i++) {
             Coordinates predatorCoords = generateRandomCoordinates();
             int[] randomValues = generateRandomValues();
             int speed = randomValues[0];
