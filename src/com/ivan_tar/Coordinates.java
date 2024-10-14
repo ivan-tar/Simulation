@@ -11,6 +11,14 @@ public class Coordinates {
         this.horizontal = horizontal;
     }
 
+    public Integer getVertical() {
+        return vertical;
+    }
+
+    public Integer getHorizontal() {
+        return horizontal;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

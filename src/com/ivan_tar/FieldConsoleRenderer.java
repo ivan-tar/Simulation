@@ -2,6 +2,7 @@ package com.ivan_tar;
 import com.ivan_tar.entities.*;
 import com.ivan_tar.enums.*;
 
+//Рендер Игрового поля в консоли
 public class FieldConsoleRenderer {
 
     public void render(Field field){

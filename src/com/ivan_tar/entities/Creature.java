@@ -22,10 +22,7 @@ abstract public class Creature extends Entity {
         return health;
     }
 
-
-
     // для каждого существа своя реализация
     abstract void makeMove();
-
 
 }

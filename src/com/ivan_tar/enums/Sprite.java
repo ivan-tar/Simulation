@@ -1,12 +1,12 @@
 package com.ivan_tar.enums;
 
 public enum Sprite {
-    HERBIVORE(" ● ", AnsiColor.BLUE),
-    PREDATOR(" ▲ ", AnsiColor.RED),
-    GRASS(" g ", AnsiColor.GREEN),
-    TREE(" t ", AnsiColor.BROWN),
-    STONE(" s ", AnsiColor.GRAY),
-    EMPTY("   ", AnsiColor.BLACK_BACKGROUND);
+    HERBIVORE("[●]", AnsiColor.BLUE),
+    PREDATOR("[▲]", AnsiColor.RED),
+    GRASS("[g]", AnsiColor.GREEN),
+    TREE("[t]", AnsiColor.BROWN),
+    STONE("[s]", AnsiColor.GRAY),
+    EMPTY("[ ]", AnsiColor.BLACK_BACKGROUND);
 
     private final String sprite;
     private final AnsiColor color;

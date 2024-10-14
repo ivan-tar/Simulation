@@ -1,10 +1,10 @@
-package com.ivan_tar;// поле
+package com.ivan_tar;
 import com.ivan_tar.entities.*;
 import com.ivan_tar.enums.*;
 
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 
+// поле
 public class Field {
     HashMap<Coordinates, Entity> entities = new HashMap<>();
     private Random random = new Random();
@@ -22,17 +22,36 @@ public class Field {
         return entities.get(coordinates);
     }
 
+    // получить доступные поля для перемещения
+    public Set<Coordinates> getAvailableFieldsToMove(Creature creature) {
+        Set<Coordinates> availableFields = new HashSet<>();
+        if ((creature instanceof Herbivore)||(creature instanceof Predator)){
+            Coordinates coordinates = creature.coordinates;
+            int speed = creature.getSpeed();
+            for (int x =coordinates.getHorizontal()-speed; x<=coordinates.getHorizontal()+speed; x++){
+                for (int y = coordinates.getVertical()-speed; y<=coordinates.getVertical()+speed; y++){
+                    Coordinates potentialMove = new Coordinates(x,y);
+                    if (isSquareEmpty(potentialMove) && (potentialMove.getVertical()>0) && (potentialMove.getHorizontal()>0) && potentialMove != coordinates){
+                        availableFields.add(potentialMove);
+                    }
+                }
+            }
+        }
+        return availableFields;
+    }
+
     // Метод для генерации случайных координат
     private Coordinates generateRandomCoordinates() {
-        int x = random.nextInt(GameVariables.MAX_X.getValue());
-        int y = random.nextInt(GameVariables.MAX_Y.getValue());
+        int x = random.nextInt(GameVariables.MAX_X.getValue()) + 1;
+        int y = random.nextInt(GameVariables.MAX_Y.getValue()) + 1;
         return new Coordinates(x, y);
     }
 
+    // Метод для генерации случайных значений объектов
     private int[] generateRandomValues() {
-        int speed = random.nextInt(GameVariables.SPEED.getValue()) + 1;              // Случайная скорость от 1 до 3
-        int health = random.nextInt(GameVariables.HEALTH.getValue()) + 1;            // Случайное здоровье от 1 до 65
-        int attackPower = random.nextInt(GameVariables.ATTACK_POWER.getValue()) + 1; // Случайная сила атаки
+        int speed = random.nextInt(GameVariables.SPEED.getValue()) + 1;
+        int health = random.nextInt(GameVariables.HEALTH.getValue()) + 1;
+        int attackPower = random.nextInt(GameVariables.ATTACK_POWER.getValue()) + 1;
         return new int[]{speed, health, attackPower};
     }
 
