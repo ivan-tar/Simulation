@@ -3,7 +3,7 @@ import com.ivan_tar.Coordinates;
 import com.ivan_tar.enums.Nature;
 
 public class StaticObject extends Entity {
-    private Nature nature;  // Тип объекта
+    private final Nature nature;  // Тип объекта
 
     public StaticObject(Coordinates coordinates, Nature nature) {
         super(coordinates);

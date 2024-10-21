@@ -8,7 +8,8 @@ public class FieldConsoleRenderer {
     public void render(Field field){
         for (int y = GameVariables.MAX_Y.getValue(); y >=1; y--){
             StringBuilder line = new StringBuilder();
-            for (int x = GameVariables.MAX_X.getValue(); x >= 1; x--){
+
+            for (int x = 1; x <= GameVariables.MAX_X.getValue(); x++){
                 Coordinates coordinates = new Coordinates(x, y);
                 if(field.isSquareEmpty(coordinates)){
                     line.append(Sprite.EMPTY.getColoredSprite());

@@ -1,5 +1,7 @@
 package com.ivan_tar;
 
+import java.io.OutputStream;
+
 public class Main {
     public static void main(String[] args) {
         Field field = new Field();
@@ -8,6 +10,6 @@ public class Main {
         FieldConsoleRenderer renderer = new FieldConsoleRenderer();
         renderer.render(field);
         int a = 123;
-        int b = 123;
     }
 }
+
